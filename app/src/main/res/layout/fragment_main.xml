@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="MainViewModel"
+            type="com.example.demo2.viewModel.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.MainFragment">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/purple_500"
+            app:titleTextColor="@color/white"
+            app:navigationIconTint="@color/white"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gpt_3an"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp60"
+            android:text="@string/gpt_3an"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0.35"
+            app:layout_constraintTop_toBottomOf="@+id/tool_bar" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gpt_bac2"
+            app:layout_constraintLeft_toLeftOf="@+id/gpt_3an"
+            app:layout_constraintRight_toRightOf="@+id/gpt_3an"
+            app:layout_constraintTop_toBottomOf="@+id/gpt_3an"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp60"
+            android:onClick="@{() -> MainViewModel.onClickGptb2()}"
+            android:text="@string/gpt_bac2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gpt_bac3"
+            app:layout_constraintLeft_toLeftOf="@+id/gpt_3an"
+            app:layout_constraintRight_toRightOf="@+id/gpt_3an"
+            app:layout_constraintTop_toBottomOf="@+id/gpt_bac2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp60"
+            android:text="@string/gpt_bac3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
